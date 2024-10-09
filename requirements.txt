@@ -20,3 +20,5 @@ bcrypt
 email-validator
 python-multipart
 mysql-connector-python
+azure-search-documents>=11.4.0,<12.0.0
+azure-identity>=1.7.0,<2.0.0

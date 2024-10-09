@@ -23,3 +23,5 @@ class UserService:
 
     def delete_user(self, db: Session, user_id: int):
         return self.user_repository.delete_user(db, user_id)
+    
+    

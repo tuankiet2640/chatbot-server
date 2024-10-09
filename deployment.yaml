@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chatbot-server-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: chatbot-server
+  template:
+    metadata:
+      labels:
+        app: chatbot-server
+    spec:
+      containers:
+      - name: chatbot-server
+        image: tuankiet2640/chatbot-server:latest
+        ports:
+        - containerPort: 8001
+        env:
+        - name: AZURE_OPENAI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: azure-openai-secret
+              key: api-key
